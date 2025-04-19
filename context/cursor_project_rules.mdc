@@ -1,0 +1,107 @@
+---
+description: Apply these rules when creating the project
+globs:
+alwaysApply: true
+---
+## Project Overview
+
+*   **Type:** Single-Page Landing Page
+*   **Description:** A modern and elegant single-page website to announce a lottery win for a Metallica concert ticket in Perth, Australia, hosted on Netlify.
+*   **Primary Goal:** Deliver an engaging, interactive experience for users by celebrating a birthday with animated transitions, confetti effects, detailed gift information, and a client-side form for identification.
+
+## Project Structure
+
+### Framework-Specific Routing
+
+*   **Directory Rules:**
+
+    *   "HTML, CSS, JavaScript (Vanilla)": Static page structure without explicit routing logic.
+    *   Example 1: "Static HTML landing page" → Uses a single index.html with section-based navigation.
+    *   Example 2: "Netlify Single-Page App" → Relies on client-side scripting (main.js) for smooth section transitions.
+    *   Example 3: "Vanilla JS navigation" → Implements manual navigation through full-screen sections using button clicks.
+
+### Core Directories
+
+*   **Versioned Structure:**
+
+    *   `root/`: Contains main project files – index.html, style.css, main.js, and an assets folder.
+    *   Example 1: `assets/images` → Stores background images, including the provided Metallica concert image URL.
+    *   Example 2: `assets/animations` → Holds scripts and libraries for confetti animations and other visual effects.
+
+### Key Files
+
+*   **Stack-Versioned Patterns:**
+
+    *   `index.html`: The primary HTML file hosting all three full-screen sections.
+    *   `style.css`: The CSS file that delivers modern, heavy metal themed styling and responsive design.
+    *   `main.js`: The JavaScript file managing section transitions, animations (including confetti), interactive hover effects, and client-side form handling.
+
+## Tech Stack Rules
+
+*   **Version Enforcement:**
+
+    *   HTML5: Use semantic HTML elements for structure and accessibility.
+    *   CSS3: Implement modern CSS features such as Flexbox/Grid layouts and smooth animations.
+    *   JavaScript (ES6+): Utilize modular code with ES6+ syntax ensuring efficiency in interactions and validations.
+    *   Netlify: Configure the deployment for a static site with optimized performance and easy hosting.
+
+## PRD Compliance
+
+*   **Non-Negotiable:**
+
+    *   "The landing page must be a single-page design with three full-screen sections that include animations, confetti effects, interactive hover effects, and a client-side form for identification." → Must maintain a modern, elegant design that resonates with a heavy metal concert theme.
+
+## App Flow Integration
+
+*   **Stack-Aligned Flow:**
+
+    *   Example: "Lottery Win Announcement Section" → The first section of index.html displays the lottery win message with an animated confetti explosion and a button leading to the next section.
+    *   Example: "Gift Description Section" → The second section provides detailed information about the Metallica concert ticket, includes interactive hover effects and uses a background image from the provided URL.
+    *   Example: "Identification Form Section" → The final section contains a form (Name, First name, Email), which upon submission shows a confirmation popup followed by a page reload.
+
+## Best Practices
+
+*   HTML5
+    *   Use semantic tags (header, section, footer) to improve accessibility and SEO.
+    *   Maintain clean and indented markup to enhance readability.
+    *   Ensure mobile responsiveness with proper viewport settings.
+
+*   CSS3
+    *   Apply modular, component-based styling to keep CSS manageable.
+    *   Use Flexbox or Grid for responsive layouts that adapt seamlessly to different screen sizes.
+    *   Optimize animations for performance and ensure smooth rendering across devices.
+
+*   JavaScript (ES6+)
+    *   Write clean, modular code using ES6 modules to promote reusability.
+    *   Leverage modern features such as arrow functions and async/await for concise syntax.
+    *   Implement efficient client-side validations and performance-optimized animations (using requestAnimationFrame where applicable).
+
+## Rules
+
+*   Derive folder/file patterns directly from project requirements focusing on a static, single-page implementation.
+*   For a non-framework static site, enforce a clear separation between HTML, CSS, and JavaScript components.
+*   Avoid integrating server-side libraries or frameworks as no backend functionality is required.
+*   Ensure that each section maintains its unique interactive functionality without mixing design patterns.
+*   Maintain consistency with version-specific best practices (e.g., HTML5 semantics, modern CSS features, ES6+ JavaScript).
+
+## Rules Metrics
+
+Before starting the project development, create a metrics file in the root of the project called
+
+`cursor_metrics.md`.
+
+### Instructions:
+
+*   Each time a cursor rule is used as context, update `cursor_metrics.md`.
+
+*   Use the following format for `cursor_metrics.md:`
+
+# Rules Metrics
+
+## Usage
+
+The number of times rules is used as context
+
+    *   rule-name.mdc: 5
+    *   another-rule.mdc: 2
+    *   ...other rules
