@@ -42,6 +42,12 @@ img {
     border-radius: 8px;
 }
 
+/* Add styles specifically for the gift section image if needed */
+#gift img {
+    max-width: 100%; /* Override the general 80% for this specific image */
+    height: auto;
+}
+
 /* Form Styling */
 
 
@@ -68,6 +74,23 @@ button.prev {
 
 button.prev:hover {
     background-color: #777;
+}
+
+/* CTA Button Specific Styles */
+a.nav-button.cta {
+    background-color: #03dac6; /* Teal accent */
+    color: #121212; /* Dark text for contrast */
+    padding: 15px 30px; /* Make it slightly larger */
+    font-weight: bold;
+    text-decoration: none; /* Remove underline from link */
+    display: inline-block; /* Ensure padding and margins work correctly */
+    border: 2px solid #03dac6;
+}
+
+a.nav-button.cta:hover {
+    background-color: #121212; /* Invert on hover */
+    color: #03dac6;
+    border-color: #03dac6;
 }
 
 /* Confetti container positioning */
