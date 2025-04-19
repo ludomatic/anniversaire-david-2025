@@ -63,4 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Form Submission Handling (to be added) ---
     
+    // --- Intersection Observer for Card Flip --- Removed ---
+
 }); 
