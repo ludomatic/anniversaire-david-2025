@@ -21,6 +21,12 @@ section {
     border-bottom: 1px solid #333; /* Separator for clarity */
 }
 
+/* Remove horizontal padding specifically for the gift section */
+section#gift {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 section:last-child {
     border-bottom: none;
 }
@@ -34,12 +40,18 @@ h2 {
     color: #03dac6; /* A teal accent */
 }
 
+/* Make the H2 in the gift section much larger and add shadow */
+section#gift h2 {
+    font-size: 3em; /* Significantly larger font size */
+    text-shadow: 
+        2px 2px 0px #121212, /* Dark shadow for depth */
+        0 0 10px #03dac6; /* Teal glow */
+    margin-bottom: 30px; /* Add some space below the title */
+}
+
 img {
-    max-width: 80%;
     height: auto;
-    margin: 20px 0;
     border: 3px solid #333;
-    border-radius: 8px;
 }
 
 /* Add styles specifically for the gift section image if needed */
@@ -50,13 +62,40 @@ img {
 
 /* Style for the gift poster image */
 .gift-poster {
-    display: block; /* Ensure it behaves as a block element */
-    max-width: 80%; /* Adjust as needed */
-    max-height: 60vh; /* Prevent image from being excessively tall */
-    height: auto; /* Maintain aspect ratio */
-    margin: 30px auto; /* Center horizontally with vertical margins */
-    border: 3px solid #333;
-    border-radius: 8px;
+    display: block; 
+    width: 100%; 
+    height: auto; 
+    /* margin: 30px 0; */ /* Margin moved to container */
+}
+
+/* Container for the poster to apply effects */
+.poster-container {
+    position: relative; /* For potential future pseudo-elements */
+    width: 100%; /* Match image width */
+    margin: 60px 0; /* Apply vertical margin here */
+    animation: flame-glow 2s infinite alternate; /* Apply the animation */
+}
+
+/* Keyframes for the flame glow effect */
+@keyframes flame-glow {
+    0% {
+        box-shadow: 
+            0 0 10px 5px #ffcc00, /* Yellow inner */
+            0 0 20px 10px #ff6600, /* Orange mid */
+            0 0 35px 15px #cc3300; /* Red outer */
+    }
+    50% {
+        box-shadow: 
+            0 0 15px 8px #ffcc00, 
+            0 0 25px 13px #ff6600, 
+            0 0 45px 20px #cc3300;
+    }
+    100% {
+        box-shadow: 
+            0 0 10px 5px #ffcc00, 
+            0 0 20px 10px #ff6600, 
+            0 0 35px 15px #cc3300;
+    }
 }
 
 /* Style for the emoji paragraph */
@@ -70,9 +109,9 @@ img {
 .gift-description {
     font-size: 1.5em; /* Larger font size */
     font-weight: bold; /* Make it bold */
-    color: #bb86fc; /* Purple accent color */
+    color: #e0e0e0; /* Changed back to default text color */
     margin: 20px 0; /* Add some vertical spacing */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */ /* Removed text shadow */
     /* Optional: Add a simple animation */
     /* animation: fadeInScale 1s ease-out; */ 
 }
