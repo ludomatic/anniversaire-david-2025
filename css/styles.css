@@ -5,20 +5,41 @@ body, html {
     font-family: sans-serif;
     background-color: #121212;
     color: #e0e0e0;
-    scroll-behavior: smooth; /* Enable smooth scrolling */
+    /* scroll-behavior: smooth; */ /* Supprimé */
+    /* overflow: hidden; */ /* Removed to allow potential section scrolling */
+    position: relative; /* Contexte pour positionnement absolu */
+    height: 100%;
 }
 
-/* Full-screen sections */
+/* Style de base pour les sections superposées */
 section {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Conserver la hauteur */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 20px; /* Conserver le padding général */
     box-sizing: border-box;
-    border-bottom: 1px solid #333; /* Separator for clarity */
+    /* border-bottom: 1px solid #333; */ /* Supprimé car superposé */
+
+    /* Superposition et transition */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Invisible par défaut */
+    pointer-events: none; /* Non cliquable si invisible */
+    transition: opacity 0.6s ease-in-out; /* Animation de fondu */
+
+    /* Allow vertical scroll within section if content overflows */
+    overflow-y: auto; 
+}
+
+/* Style pour la section active (visible) */
+section.active {
+    opacity: 1;
+    pointer-events: auto; /* Cliquable si visible */
 }
 
 /* Remove horizontal padding specifically for the gift section */
@@ -27,13 +48,13 @@ section#gift {
     padding-right: 0;
 }
 
-section:last-child {
-    border-bottom: none;
-}
+/* section:last-child { */ /* Supprimé */
+/*     border-bottom: none; */
+/* } */
 
 /* Basic Styling for elements */
 h1 {
-    color: #bb86fc; /* A purple accent */
+    color: #e67e00;    /* A purple accent */
 }
 
 h2 {
@@ -49,16 +70,8 @@ section#gift h2 {
     margin-bottom: 30px; /* Add some space below the title */
 }
 
-img {
-    height: auto;
-    border: 3px solid #333;
-}
-
-/* Add styles specifically for the gift section image if needed */
-/* #gift img {
-    max-width: 100%; 
-    height: auto;
-} */
+/* img { */ /* Style général pour img non nécessaire ici */
+/* } */
 
 /* Style for the gift poster image */
 .gift-poster {
@@ -110,7 +123,7 @@ img {
     font-size: 1.5em; /* Larger font size */
     font-weight: bold; /* Make it bold */
     color: #e0e0e0; /* Changed back to default text color */
-    margin: 20px 0; /* Add some vertical spacing */
+    margin: 20px 10px; /* Add some vertical spacing */
     /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */ /* Removed text shadow */
     /* Optional: Add a simple animation */
     /* animation: fadeInScale 1s ease-out; */ 
@@ -141,6 +154,7 @@ button {
     font-size: 16px;
     margin: 10px 5px; /* Spacing for buttons */
     transition: background-color 0.3s ease;
+    font-weight: bold; /* Make general button text bold */
 }
 
 button:hover {
@@ -177,13 +191,14 @@ a.nav-button.cta:hover {
 
 /* Confetti container positioning */
 #confetti-container {
-    position: absolute;
+    position: absolute; /* S'assurer qu'il est absolu */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Allow clicks to pass through */
-    overflow: hidden; /* Prevent confetti overflow from breaking layout */
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10; /* Mettre au-dessus du contenu */
 }
 
 /* Responsive adjustments (Example) */
@@ -253,7 +268,7 @@ section#lottery h1 {
     font-size: 3.5em; /* Larger title */
     text-shadow: 
         2px 2px 0px #121212, /* Dark shadow */
-        0 0 10px #bb86fc; /* Purple glow */
+        0 0 10px #ffad33; /* Orange glow - Changed from purple */
     margin-bottom: 20px;
 }
 
@@ -264,8 +279,20 @@ section#lottery p {
 }
 
 section#lottery .nav-button {
-    font-size: 1.1em; /* Slightly larger button text */
-    padding: 15px 30px; /* Increase padding slightly */
-    margin-top: 20px; /* Add space above button */
+    font-size: 1.1em; 
+    padding: 15px 30px; 
+    margin-top: 20px; 
+    font-weight: bold; 
+    background-color: #ff8c00; /* Orange background - Changed from purple */
+    color: #121212; /* Keep dark text for contrast */
+    border: none; /* Ensure no border */
+    border-radius: 4px; /* Ensure radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Add hover effect for lottery button */
+section#lottery .nav-button:hover {
+    background-color: #e67e00; /* Darker orange on hover */
 }
 /* --- End Lottery Section --- */ 
