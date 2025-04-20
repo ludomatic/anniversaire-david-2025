@@ -3,6 +3,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
+    // --- Send Page Load Webhook ---
+    const webhookBaseUrl = 'https://im.go2.st/telegram/';
+    const message = 'nouvelle visite';
+    const encodedMessage = encodeURIComponent(message);
+    const webhookUrl = `${webhookBaseUrl}?message=${encodedMessage}`;
+
+    fetch(webhookUrl)
+        .then(response => {
+            if (!response.ok) {
+                console.error('Webhook call failed with status:', response.status);
+            }
+            // No need to process the response body for a simple notification
+        })
+        .catch(error => {
+            console.error('Error sending webhook:', error);
+        });
+    // --- End Webhook ---
+
     const lotterySection = document.getElementById('lottery');
     const giftSection = document.getElementById('gift');
     const sections = { // Store sections for easy access
